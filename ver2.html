@@ -142,14 +142,22 @@ const steps = document.querySelectorAll('.step');
 const gamecontainer = document.querySelector('#game_area');
 function myFunction(event) {
   drop_coins();
-  event.target.appendChild(champ);
-  event.target.style.background = 'white';
+     event.target.appendChild(champ);
+  // check if there a coin
+  if (event.target.className == 'coin') {
+
+  alert('i found coin');
+    
+  }
+ 
+  //event.target.style.background = 'white';
   
 }
 function drop_coins() {
   let first = Math.floor((Math.random() * 2) + 1);
   let second = Math.floor((Math.random() * 10) + 0);
   let newimage = document.createElement('img');
+  newimage.className = 'coin';
   newimage.src = 'https://www.clipartmax.com/png/middle/237-2370984_gold-coin-icon-png-coin-icon-game.png';
   newimage.style.width = '25px';
   newimage.style.height = '25px';
