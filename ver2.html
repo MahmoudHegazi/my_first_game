@@ -38,7 +38,7 @@
 </style>
 </head>
 <body>
-
+<p>Score: <span id="score_text" style="background-color:black;color:green;padding:10px;font-size:1em;font-weight:bold;font-family:lemon;"></span></p>
 <img id="champ" style="display:fixed;" src="https://www.w3schools.com/images/stickman.gif">
 
 <div id="game_area" style="display:flex;width:500px;flex-wrap:wrap;">
@@ -136,10 +136,11 @@
 
 
 
-
+var score = document.querySelector('#score_text');
 var champ = document.querySelector('#champ');
 const steps = document.querySelectorAll('.step');
 const gamecontainer = document.querySelector('#game_area');
+let score_index = 0;
 function myFunction(event) {
   drop_coins();
      event.target.appendChild(champ);
@@ -147,6 +148,9 @@ function myFunction(event) {
   if (event.target.className == 'coin') {
 
   alert('i found coin');
+  // add 1 to score
+  score_index += 1 
+  score.textContent = score_index;
     
   }
  
