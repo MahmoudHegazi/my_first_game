@@ -16,7 +16,7 @@
   
 }
 
-#zft {
+#ball {
  width: 300px;
  height: 300px;
  align-self: center;
@@ -41,7 +41,7 @@
 <div class="container">
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffreepngimg.com%2Fthumb%2Fmarvel_vision%2F4-2-marvel-vision-free-png-image.png&f=1&nofb=1" id="demo">
 
-<img id="zft" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F3%2FFireball-PNG-Image.png&f=1&nofb=1" id="ball">
+<img id="ball" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F3%2FFireball-PNG-Image.png&f=1&nofb=1" id="ball">
 
 <img id="monster" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fbc%2Fff%2Ff5%2Fbcfff5dd0c35b9a7f166d49af102ff99.png&f=1&nofb=1">
 
@@ -77,7 +77,7 @@ function myRotation() {
       console.log("we reach the end" , stage, wid);
       stage = "one";
       myStopFunction();
-      document.querySelector("#zft").style.display = "inline"
+      document.querySelector("#ball").style.display = "inline"
       turnPushStep();
     }
     
@@ -89,12 +89,12 @@ function myPush() {
    if (pushSize >= 300) {
      pushSize = 0;
      myStopFunction1();
-     document.querySelector("#zft").style.display = "none";
-     document.querySelector("#zft").style.marginLeft = "0px";
+     document.querySelector("#ball").style.display = "none";
+     document.querySelector("#ball").style.marginLeft = "0px";
      document.querySelector("#attackbutton").style.display = "block";
      
    } else {
-     document.querySelector("#zft").style.marginLeft = pushSize + "px";
+     document.querySelector("#ball").style.marginLeft = pushSize + "px";
    }
 }
   
