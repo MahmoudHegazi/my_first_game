@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<style>
+.container {
+  display: flex;
+  justify-content: flex-start;
+  border: 2px solid gray;
+  height: 600px;
+}
+#demo {
+  font-size: 1em;
+  color: white;
+  width: 30%;
+  height:500px;
+
+  
+}
+
+#zft {
+ width: 300px;
+ height: 300px;
+ align-self: center;
+ display: none;
+
+}
+
+#monster {
+  width: 30%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: 200px;
+}
+</style>
+<body>
+
+
+
+
+<p>A script on this page starts this clock:</p>
+
+<div class="container">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffreepngimg.com%2Fthumb%2Fmarvel_vision%2F4-2-marvel-vision-free-png-image.png&f=1&nofb=1" id="demo">
+
+<img id="zft" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F3%2FFireball-PNG-Image.png&f=1&nofb=1" id="ball">
+
+<img id="monster" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fbc%2Fff%2Ff5%2Fbcfff5dd0c35b9a7f166d49af102ff99.png&f=1&nofb=1">
+
+</div>
+
+<br /><br />
+
+<button id="attackbutton" onclick="attack()">Attack1</button>
+<script>
+var myVar;
+var myVar1;
+let wid = 360;
+let pushSize = 0;
+let stage = "one";
+function myRotation() {
+    if (wid > 0 && stage == "one" && wid <= 360) {
+      wid -= 5;
+  document.querySelector("#demo").style.transform = `rotate(${wid}deg)`;
+
+      console.log("here we at stage one num" , wid);
+    }else if (wid == 0) {
+      wid += 5;
+      stage = "two";
+  document.querySelector("#demo").style.transform = `rotate(${wid}deg)`;
+
+      console.log("here we at stage two num" , stage);
+    }else if (stage == "two" && wid > 0 && wid < 360) {
+      wid += 5;
+  document.querySelector("#demo").style.transform = `rotate(${wid}deg)`;
+
+      console.log("calm stage two" , stage, wid);
+    } else {
+      console.log("we reach the end" , stage, wid);
+      stage = "one";
+      myStopFunction();
+      document.querySelector("#zft").style.display = "inline"
+      turnPushStep();
+    }
+    
+    }
+    
+ 
+function myPush() {
+   pushSize += 5;
+   if (pushSize >= 300) {
+     pushSize = 0;
+     myStopFunction1();
+     document.querySelector("#zft").style.display = "none";
+     document.querySelector("#zft").style.marginLeft = "0px";
+     document.querySelector("#attackbutton").style.display = "block";
+     
+   } else {
+     document.querySelector("#zft").style.marginLeft = pushSize + "px";
+   }
+}
+  
+  
+
+function turnPushStep() {
+   myVar1 = setInterval(myPush, 1);
+}
+
+function attack() {
+        document.querySelector("#attackbutton").style.display = "none";
+   myVar = setInterval(myRotation, 20);
+}
+
+
+
+function myStopFunction() {
+  clearInterval(myVar);
+}
+function myStopFunction1() {
+  clearInterval(myVar1);
+}
+
+
+</script>
+
+</body>
+</html>
